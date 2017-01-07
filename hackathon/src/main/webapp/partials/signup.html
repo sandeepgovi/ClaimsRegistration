@@ -1,0 +1,83 @@
+
+<form name="signupform" novalidate>
+
+	<div class="container">
+		<div class="jumbotron">
+			<div class="row">
+				<div class="row">
+					<h3 align="center">Registration for Claim's Status Updates </h3>
+					<div class="panel panel-default">
+						<div class="panel-heading">Claimants Information</div>
+						<div class="panel-body">
+							<div class="form-group col-md-12">
+								<label for="firstName" class="col-md-2 control-label">
+									First Name : </label>
+								<div class="col-md-5">
+									<input type="text" class="form-control" name=firstName
+										ng-model="signupDetails.firstName"
+										value={{signupDetails.firstName}}
+										placeholder="Enter First Name" id="firstName" required>
+									<span style="color: red"
+										ng-show="signupform.firstName.$dirty && signupform.firstName.$error.required">
+										First Name is required! </span>
+								</div>
+							</div>
+
+							<div class="form-group col-md-12">
+								<label for="lastName" class="col-md-2 control-label">
+									Last Name : </label>
+								<div class="col-md-5">
+									<input type="text" class="form-control" name=lastName
+										ng-model="signupDetails.lastName"
+										value={{signupDetails.lastName}} placeholder="Enter Last Name"
+										id="lastName" required> <span style="color: red"
+										ng-show="signupform.lastName.$dirty && signupform.lastName.$error.required">
+										Last Name is required! </span>
+								</div>
+							</div>
+
+							<div class="form-group col-md-12">
+								<label for="tel-input" class="col-md-2 control-label">
+									Telephone :</label>
+								<div class="col-md-5">
+									<input class="form-control" type="text"
+										ng-model="signupDetails.telephone"
+										value={{signupDetails.telephone}} name="telephone"
+										placeholder="Enter Telephone Number" id="tel-input"
+										ng-minlength="10" ng-maxlength="10"> <span
+										style="color: red"
+										ng-show="signupform.telephone.$dirty && signupform.telephone.$error.required">Contact
+										number is mandatory!</span> <span style="color: red"
+										ng-show="signupform.telephone.$dirty && signupform.telephone.$error.minlength">Phone
+										number should be 10 digit</span> <span style="color: red"
+										ng-show="signupform.telephone.$dirty && signupform.telephone.$error.maxlength">Phone
+										number should be 10 digit</span>
+								</div>
+							</div>
+
+							<div class="form-group col-md-12">
+								<label for="email" class="col-md-2 control-label"> Email
+									: </label>
+								<div class="col-md-5">
+									<input type="text" class="form-control" name=email
+										ng-model="signupDetails.email" value={{signupDetails.email}}
+										placeholder="Enter Valid Email address" id="email" required>
+									<span style="color: red"
+										ng-show="signupform.email.$dirty && signupform.email.$error.required">
+										Email is required! </span>
+								</div>
+							</div>
+
+							<div class="form-group col-md-12">
+								<div class=" col-md-2 control-label">
+									<button type="submit" ng-click="submitSignup()"
+										class="btn btn-primary" ng-disabled="signupform.$invalid">Submit</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

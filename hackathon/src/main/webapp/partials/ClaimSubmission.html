@@ -1,0 +1,115 @@
+<form>
+
+	<div class="container">
+		<div class="jumbotron">
+			<div class="row">
+				<h3 align="center">Claim Submission</h3>
+				<div class="panel panel-default">
+					<div class="panel-heading">Vehicle Information</div>
+					<div class="panel-body">
+						<div class="form-group col-md-12">
+							<label for="make" class="col-md-2 control-label">Make :</label>
+							<div class="col-md-5">
+								<input class="form-control input-sm" type="text" id="make"
+									ng-model="claimSubmission.make" value={{claimSubmission.make}}
+									placeholder="Enter Vehicle's Make and Model">
+							</div>
+						</div>
+
+						<div class="form-group col-md-12">
+							<label for="model" class="col-md-2 control-label">Model :</label>
+							<div class="col-md-5">
+								<input class="form-control input-sm" type="text" id="model"
+									ng-model="claimSubmission.model"
+									value={{claimSubmission.model}}
+									placeholder="Enter Vehicle's manufacturing model">
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="jumbotron">
+			<div class="row">
+				<div class="panel panel-default">
+					<div class="panel-heading">Coverage</div>
+					<div class="panel-body">
+						
+							<div class="form-group col-md-12">
+								<label for="lob" class="col-md-2 control-label"> Line Of
+									Business : </label>
+								<div class="col-md-5">
+									<select class="custom-select">
+										<option value="Auto">Auto</option>
+									</select>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container">
+		<div class="jumbotron">
+			<div class="row">
+
+				<div class="panel panel-default">
+					<div class="panel-heading">Claimant's Information</div>
+					<div class="panel-body">
+						<div class="form-group col-md-12">
+							<label for="firstName" class="col-md-2 control-label">First
+								Name :</label>
+							<div class="col-md-5">
+								<input class="form-control input-sm" type="text" id="firstName"
+									ng-model="claimSubmission.firstName"
+									value={{claimSubmission.firstName}}
+									placeholder="Enter First Name">
+							</div>
+						</div>
+
+
+						<div class="form-group col-md-12">
+
+							<label for="lastName" class="col-md-2 control-label">Last
+								Name :</label>
+							<div class="col-md-5">
+								<input class="form-control" type="text" id="lastName"
+									ng-model="claimSubmission.lastName"
+									value={{claimSubmission.lastName}}
+									placeholder="Enter Last Name">
+							</div>
+
+						</div>
+
+						<div class="form-group col-md-12">
+
+							<label for="email" class="col-md-2 control-label">Email :</label>
+							<div class="col-md-5">
+								<input class="form-control" type="text" id="email"
+									ng-model="claimSubmission.email"
+									value={{claimSubmission.email}}
+									placeholder="Enter valid Email address">
+							</div>
+
+						</div>
+
+						<div class="form-group row col-md-12">
+							<div class="offset-sm-2 col-sm-10">
+								<button type="submit" ng-click="submit()"
+									class="btn btn-primary">Submit</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

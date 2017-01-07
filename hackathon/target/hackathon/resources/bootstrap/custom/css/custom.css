@@ -1,0 +1,112 @@
+/*
+ * Custom CSS  
+ */
+
+/*accountSetup.jsp*/
+#wrapper {
+	width: 100%;
+}
+
+#page-wrapper {
+	padding: 0 15px;
+	min-height: 568px;
+	background-color: #fff;
+}
+
+@media ( min-width :768px) {
+	#page-wrapper {
+		position: inherit;
+		margin: 0 0 0 250px;
+		padding: 0 30px;
+		border-left: 1px solid #e7e7e7;
+	}
+}
+
+.nav-head {
+	background-color: #eee;
+	min-height: 38px;
+}
+
+.container-font {
+	background-color: black;
+	min-height: 48px;
+	color: white;
+	font: bold 20px/25px helvetica, arial, verdana, sans-serif;
+}
+
+.container-padd {
+	border: 2px solid gray;
+	padding: 2px
+}
+
+.text-footer {
+	background-color: black;
+	min-height: 48px;
+	color: white
+}
+
+.navbar-border {
+	border-left: 3px solid #bfb6b6;
+	border-bottom: 2px solid #bfb6b6;
+}
+
+.well-border {
+	border: 3px solid #bfb6b6;
+	background-color: white;
+}
+
+.customSelect {
+	width: auto;
+	margin-left: 10px
+}
+
+.custom-h5 {
+	margin-left: 10px;
+	color: black;
+	text-align: left
+}
+
+.div-border {
+	border: 3px solid #bfb6b6
+}
+
+.back-color {
+	background-color: #eee
+}
+
+.label-weight {
+	font-weight: bold
+}
+
+.div-table {
+	border-top: 1px solid #bfb6b6;
+	margin-top: 5px
+}
+
+.panel-border {
+	border: 2px solid #bfb6b6;
+	margin-top: 2px
+}
+
+.panel-heading1 {
+	height: 30px;
+	padding: 12px;
+	background-color: #eee
+}
+
+.icon-right {
+	float: right
+}
+
+.row-top {
+	margin-top: 10px
+}
+
+.panel-border {
+	border: 2px solid #bfb6b6;
+	margin-bottom: 5px;
+}
+
+.text-border {
+	border: 1px solid grey
+}

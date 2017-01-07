@@ -1,0 +1,98 @@
+
+<form name="claimsForm" novalidate>
+
+	<div class="container">
+		<div class="jumbotron">
+			<div class="row">
+				<div class="form-group col-md-12">
+					<label for="policyNumber" 
+							class="col-md-2 control-label">
+							PolicyNumber : </label>
+					<div class="col-md-5">
+						<input 
+						type="text" 
+						class="form-control"
+						name=policyNumber 
+						ng-model="policyDetails.policyNumber"
+						value={{policyDetails.policyNumber}}
+						placeholder="Enter Policy Number"
+						id="policyNumber"
+						required>
+						<span style="color:red"
+						ng-show="claimsForm.policyNumber.$dirty && claimsForm.policyNumber.$error.required"> 
+						PolicyNumber is required!
+						</span>
+					</div>
+				</div>
+
+				<div class="form-group col-md-12">
+					<label for="tel-input" class="col-md-2 control-label">
+						Telephone :</label>
+					<div class="col-md-5">
+						<input class="form-control" 
+						 type="text"
+						 ng-model="policyDetails.telephone"
+						 value={{policyDetails.telephone}}
+						 name="telephone"
+						 placeholder="Enter Telephone Number" 
+						 id="tel-input"
+						 ng-minlength="10"
+						 ng-maxlength="10">
+						 <span style="color:red" 
+						 ng-show="claimsForm.telephone.$dirty && claimsForm.telephone.$error.required">Contact number is mandatory!</span>
+						 <span style="color:red" 
+						 ng-show="claimsForm.telephone.$dirty && claimsForm.telephone.$error.minlength">Phone number should be 10 digit</span>
+						 <span style="color:red" 
+						 ng-show="claimsForm.telephone.$dirty && claimsForm.telephone.$error.maxlength">Phone number should be 10 digit</span>
+					</div>
+				</div>
+
+				<div class="form-group col-md-12">
+					<label for="lossDate" class="col-md-2 control-label"> Date
+						Of Loss : </label>
+					<div class="col-md-5">
+						<input class="form-control" type="text"
+							ng-model="policyDetails.lossDate"
+							value={{policyDetails.lossDate}} placeholder="Date of loss"
+							id="lossDate">
+					</div>
+				</div>
+
+
+<!-- 				<div class="form-group col-md-12">
+					<label for="lob" class="col-md-2 control-label"> Line Of
+						Business : </label>
+					<div class="col-md-5">
+						<select class="custom-select" ng-model="policyDetails.lob"
+							id="lob">
+							<option selected>Open this select menu</option>
+							<option value="Auto">Auto</option>
+						</select>
+					</div>
+				</div> -->
+				
+				<div class="form-group col-md-12">
+					<label for="lob" class="col-md-2 control-label"> Line Of
+						Business : </label>
+					<div class="col-md-5">
+						<select class="custom-select">
+
+							<option value="Auto">Auto</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group col-md-12">
+					<div class=" col-md-2 control-label">
+						<button 
+						type="submit" 
+						ng-click="goToClaimsSubmission()"
+						class="btn btn-primary"
+						ng-disabled="claimsForm.$invalid"						
+						>Next</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

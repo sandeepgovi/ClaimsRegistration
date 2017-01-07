@@ -1,0 +1,43 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:oxm="http://www.springframework.org/schema/oxm" xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:int-ws="http://www.springframework.org/schema/integration/ws"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+		http://www.springframework.org/schema/integration/ws http://www.springframework.org/schema/integration/ws/spring-integration-ws.xsd
+		http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd" >
+
+	<context:component-scan base-package="com.*" />
+	<mvc:annotation-driven />
+	<context:annotation-config/>
+	
+	<bean id="dataSrc"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:localhost:1521/orcl" />
+		<property name="username" value="scott" />
+		<property name="password" value="Oracle123" />
+	</bean>
+
+	<bean id="claimSubDAOObj" class="com.lm.hackathon.dao.ClaimSubmissionDAO">
+		<property name="dataSource" ref="dataSrc"></property>
+	</bean> 
+	
+	<bean id="claimSubSvc" class = "com.lm.hackathon.service.ClaimSubmissionService">
+		<property name="claimSubDAOObj" ref="claimSubDAOObj"></property>
+	</bean>
+
+	<bean id="registerDAOObj" class="com.lm.hackathon.dao.RegistrationDAO">
+		<property name="dataSource" ref="dataSrc"></property>
+	</bean> 
+	
+	<bean id="reistrSvc" class = "com.lm.hackathon.service.RegistrationSvc">
+		<property name="registerDAOObj" ref="registerDAOObj"></property>
+	</bean>
+	
+</beans>
